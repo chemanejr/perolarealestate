@@ -50,7 +50,7 @@
   max-width: 1400px; /* Alargado para acomodar a barra de pesquisa horizontal */
   width: 100%;
   margin: 0 auto;
-  transform: translateY(40px); /* Adjusted to move slightly less down, keeping it centered in the hero */
+  transform: translateY(-80px); /* Subido aproximadamente 3cm em relação à posição anterior */
 }
 
 .home-page .hero-content h1 {
@@ -543,7 +543,7 @@
   .home-page .hero-content {
     width: 100%;
     padding: 3rem 1.5rem 3rem; 
-    transform: translateY(-130px); 
+    transform: translateY(-180px); 
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
@@ -603,7 +603,7 @@
 
   .home-page .hero-content {
     padding-top: 3rem; 
-    transform: translateY(-50px); 
+    transform: translateY(-100px); 
   }
 
   .home-page .hero-content h1 { 
