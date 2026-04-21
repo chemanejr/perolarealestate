@@ -536,7 +536,7 @@
   .hero-content {
     width: 100%;
     padding: 5rem 1.5rem 3rem; 
-    transform: translateY(-30px); 
+    transform: translateY(-80px); 
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
