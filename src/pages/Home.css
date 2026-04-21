@@ -543,8 +543,9 @@
   }
 
   .search-bar {
-    margin-right: 3rem;
+    margin-right: 1.5rem;
     margin-left: auto;
+    max-width: 360px;
   }
 
   .properties-grid { grid-template-columns: repeat(2, 1fr); }
@@ -561,8 +562,9 @@
     padding: 1.2rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
-    margin: 0 1rem;
-    width: calc(100% - 2rem);
+    margin: 0 0.8rem 0 auto;
+    width: 90%;
+    max-width: 320px;
   }
 
   .search-select {
