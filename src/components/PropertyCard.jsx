@@ -35,7 +35,7 @@ export default function PropertyCard({ id, images = [], image, title, price, loc
   return (
     <div className="property-card">
       <div className="property-image-wrapper">
-        <img src={displayImages[currentIdx]} alt={title} className="property-image" />
+        <img src={displayImages[currentIdx]} alt={title} className="property-image" loading="lazy" decoding="async" />
         
         {displayImages.length > 1 && (
           <>
