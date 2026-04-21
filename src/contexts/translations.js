@@ -8,8 +8,8 @@ export const translations = {
       cta: 'Falar Connosco'
     },
     hero: {
-      title: 'Encontra o Imóvel dos Teus Sonhos em Maputo.',
-      subtitle: 'A simbiose perfeita entre requinte e exclusividade. Descubra propriedades que definem o novo padrão de luxo em Moçambique.',
+      title: 'Sinta o Privilégio de Habitar o Extraordinário.',
+      subtitle: 'Uma curadoria privada para quem exige o topo. Onde o requinte arquitectónico encontra a discrição absoluta.',
       search: {
         buy: 'Comprar',
         rent: 'Arrendar',
@@ -165,8 +165,8 @@ export const translations = {
       cta: 'Get in Touch'
     },
     hero: {
-      title: 'Find Your Dream Property in Maputo.',
-      subtitle: 'The perfect symbiosis of refinement and exclusivity. Discover properties that define the new standard of luxury in Mozambique.',
+      title: 'Feel the Privilege of Inhabiting the Extraordinary.',
+      subtitle: 'A private curation for those who demand the pinnacle. Where architectural refinement meets absolute discretion.',
       search: {
         buy: 'Buy',
         rent: 'Rent',
