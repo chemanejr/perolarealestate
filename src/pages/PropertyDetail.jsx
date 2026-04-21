@@ -206,16 +206,16 @@ export default function PropertyDetail() {
           <div className="contact-card">
             <div className="form-header">
               <h3>Tenho Interesse</h3>
-              <p>Deixe seus dados e o corretor entrará em contato.</p>
+              <p>Deixe os seus dados e o consultor entrará em contacto.</p>
               <div className="form-step-indicator">Passo {formStep} de 4</div>
             </div>
 
             <div className="multi-step-form">
               {formStep === 1 && (
                 <div className="form-step-content fade-in">
-                  <h4>Quando você pretende comprar?</h4>
+                  <h4>Quando pretende comprar?</h4>
                   <div className="option-list">
-                    {["Quero fechar o quanto antes", "Nos próximos 30 dias", "Em até 3 meses", "Em 6 meses ou mais", "Ainda estou pesquisando"].map(opt => (
+                    {["Quero fechar o mais rapidamente possível", "Nos próximos 30 dias", "Em até 3 meses", "Em 6 meses ou mais", "Ainda estou a pesquisar"].map(opt => (
                       <button key={opt} className="option-btn" onClick={() => handleOptionSelect('timing', opt)}>{opt}</button>
                     ))}
                   </div>
@@ -226,7 +226,7 @@ export default function PropertyDetail() {
                 <div className="form-step-content fade-in">
                   <h4>Como pretende pagar?</h4>
                   <div className="option-list">
-                    {["Já tenho financiamento aprovado", "Vou pagar à vista", "Estou em processo de aprovação", "Ainda não sei"].map(opt => (
+                    {["Já tenho financiamento aprovado", "Vou pagar a pronto", "Estou em processo de aprovação", "Ainda não sei"].map(opt => (
                       <button key={opt} className="option-btn" onClick={() => handleOptionSelect('payment', opt)}>{opt}</button>
                     ))}
                   </div>

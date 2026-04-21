@@ -8,8 +8,8 @@ export const translations = {
       cta: 'Falar Connosco'
     },
     hero: {
-      title: 'O Teu Próximo Imóvel em Maputo,\nSem Complicações.',
-      subtitle: 'Compra, arrenda ou investe com quem conhece o mercado por dentro.',
+      title: 'O Seu Próximo Imóvel em Maputo,\nSem Complicações.',
+      subtitle: 'Compre, arrende ou invista com quem conhece o mercado por dentro.',
       search: {
         buy: 'Comprar',
         rent: 'Arrendar',
@@ -57,7 +57,7 @@ export const translations = {
       text: 'ANOS DE EXPERIÊNCIA'
     },
     footer: {
-      brandDesc: 'A sua curadoria definitiva para o mercado imobiliário de luxo em Moçambique. Exclusividade em cada detalhe.',
+      brandDesc: 'A sua curadoria definitiva para o mercado imobiliário de luxo em Moçambique. Exclusividade em cada pormenor.',
       linksTitle: 'LINKS RÁPIDOS',
       links: { about: 'Sobre Nós', props: 'Propriedades', invest: 'Investimentos' },
       supportTitle: 'SUPORTE',
@@ -72,7 +72,7 @@ export const translations = {
       desc: 'A nossa equipa está pronta para te ajudar a encontrar a sua próxima residência de prestígio em Moçambique.',
       form: {
         name: 'NOME',
-        namePlaceholder: 'Seu nome completo',
+        namePlaceholder: 'O seu nome completo',
         company: 'EMPRESA (OPCIONAL)',
         companyPlaceholder: 'Nome da sua organização',
         phone: 'TELEFONE/WHATSAPP',
@@ -127,7 +127,7 @@ export const translations = {
         interested: 'Interessado neste imóvel?',
         desc: 'Preencha os dados e um dos nossos consultores entrará em contacto em menos de 24h.',
         name: 'NOME',
-        namePlaceholder: 'Seu nome completo',
+        namePlaceholder: 'O seu nome completo',
         phone: 'TELEFONE / WHATSAPP',
         phonePlaceholder: '+258',
         message: 'MENSAGEM',

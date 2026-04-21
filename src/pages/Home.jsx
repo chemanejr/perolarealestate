@@ -210,14 +210,14 @@ export default function Home() {
       <section className="cta-section">
         <div className="cta-container">
           <div className="cta-header">
-            <h2>Pronto Para Transformar a Tua Busca?</h2>
+            <h2>Pronto Para Transformar a Sua Procura?</h2>
             <p>Agende uma consultoria gratuita com a nossa equipa.</p>
           </div>
           <form className="cta-form">
             <div className="form-row">
               <div className="input-group">
                 <label>NOME</label>
-                <input type="text" placeholder="Seu nome completo" />
+                <input type="text" placeholder="O seu nome completo" />
               </div>
               <div className="input-group">
                 <label>TELEFONE/WHATSAPP</label>
