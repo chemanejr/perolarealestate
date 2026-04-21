@@ -8,8 +8,8 @@ export const translations = {
       cta: 'Falar Connosco'
     },
     hero: {
-      title: 'Habite a Excelência. O Seu Novo Marco de Prestígio em Maputo.',
-      subtitle: 'A sua curadoria de elite para o mercado imobiliário de luxo em Maputo.',
+      title: 'Sinta o Privilégio de Habitar no Extraordinário.',
+      subtitle: 'Curadoria de imóveis de elite. A excelência que o seu sucesso exige em Maputo.',
       search: {
         buy: 'Comprar',
         rent: 'Arrendar',
@@ -165,8 +165,8 @@ export const translations = {
       cta: 'Get in Touch'
     },
     hero: {
-      title: 'Dwell in Excellence. Your New Landmark of Prestige in Maputo.',
-      subtitle: 'Your elite curation for the luxury real estate market in Maputo.',
+      title: 'Feel the Privilege of Inhabiting the Extraordinary.',
+      subtitle: 'Elite property curation. The excellence your success demands in Maputo.',
       search: {
         buy: 'Buy',
         rent: 'Rent',
