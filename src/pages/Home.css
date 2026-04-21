@@ -61,9 +61,13 @@
 }
 
 .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 3rem;
-  opacity: 0.9;
+  opacity: 0.95;
+  font-weight: 500;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-bar {

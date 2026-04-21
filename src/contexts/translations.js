@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       title: 'Encontra o Imóvel dos Teus Sonhos em Maputo.',
-      subtitle: 'A tua curadoria definitiva para o mercado imobiliário de luxo em Moçambique.',
+      subtitle: 'Elevando o conceito de viver bem. Acesso exclusivo à nossa curadoria de elite para o mercado de alto padrão em Moçambique.',
       search: {
         buy: 'Comprar',
         rent: 'Arrendar',
@@ -166,7 +166,7 @@ export const translations = {
     },
     hero: {
       title: 'Find Your Dream Property in Maputo.',
-      subtitle: 'Your ultimate curation for the luxury real estate market in Mozambique.',
+      subtitle: 'Elevating the concept of living. Exclusive access to our elite curation for the high-end real estate market in Mozambique.',
       search: {
         buy: 'Buy',
         rent: 'Rent',
