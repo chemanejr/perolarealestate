@@ -1,0 +1,145 @@
+:root {
+  --color-primary: #2D4F1E; /* Deep Forest Green (Premium) */
+  --color-primary-hover: #3D6B29; 
+  --color-dark: #07213A; /* Midnight Blue from logo */
+  --color-dark-lighter: #0A365C; 
+  --color-bg-light: #FDFBF8; /* Off-white for luxury feel */
+  --color-white: #FFFFFF;
+  --color-text-main: #2C2C2C;
+  --color-text-muted: #6B6B6B;
+  --color-border: #EFEDE9;
+  --color-accent: #C5A059; /* Sophisticated Satin Gold */
+  --color-accent-hover: #D4AF37;
+
+
+  
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.14);
+
+  --color-primary-dark: #4F7B2D;
+  --color-surface: #f7f3ec;
+  --color-cta-bg: var(--color-dark);
+
+  --radius-sm: 8px;   /* Modernized from 4px */
+  --radius-md: 12px;  /* Modernized from 8px */
+  --radius-lg: 20px;  /* Modernized from 12px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+/* ── Luxury Button System ── */
+.btn-primary,
+.btn-outline-dark,
+.navbar-cta,
+.property-btn,
+.filter-btn,
+.page-num,
+.page-nav,
+.search-btn {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  overflow: hidden;
+  cursor: pointer; /* Garantindo que o cursor mude ao passar o mouse */
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.7rem 1.8rem; /* Reduced size */
+  font-weight: 700;
+  font-size: 0.8rem; /* Reduced size */
+  letter-spacing: 0.4px;
+  border-radius: 50px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  box-shadow: 0 4px 14px rgba(111, 162, 67, 0.4);
+}
+
+.btn-outline-dark {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.7rem 1.8rem; /* Reduced size */
+  font-weight: 700;
+  font-size: 0.8rem; /* Reduced size */
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(90, 132, 54, 0.3);
+  animation: pulse 2.5s infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-outline-dark:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(90, 132, 54, 0.4);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(90, 132, 54, 0.4);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(90, 132, 54, 0);
+    transform: scale(1.05); /* Increased scale for better visibility on smaller button */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(90, 132, 54, 0);
+    transform: scale(1);
+  }
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 0 1rem;
+  }
+}

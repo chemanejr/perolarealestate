@@ -1,0 +1,10 @@
+Starting scrape...
+Fetching https://www.casaesol.co.mz/properties
+Error Casaesol Could not find PRELOADED_STATE
+Fetching https://imobiliariaduma-mz.com/propriedades/
+Found 0 links for duma
+Fetching http://sawa-sawa-imobiliaria.com/
+Found 0 links for sawa
+Fetching https://www.hibis.co.mz/
+Found 0 links for hibis
+Saved 0 properties to C:\Users\Sebastião Chemane\Desktop\Chemane\Antigravity\perola-real-estate\public\properties.json
