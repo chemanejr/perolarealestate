@@ -173,7 +173,7 @@
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  height: 200px;
+  height: 450px;
 }
 
 .contact-map img {
