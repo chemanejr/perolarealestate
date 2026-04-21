@@ -5,7 +5,7 @@
 }
 
 /* ── Hero Section (Home Page Style) ── */
-.hero-section {
+.property-detail-page .hero-section {
   position: relative;
   height: 85vh; /* Aumentado de 75vh */
   min-height: 650px; /* Aumentado de 550px */
@@ -20,7 +20,7 @@
   overflow: hidden;
 }
 
-.hero-slideshow-container {
+.property-detail-page .hero-slideshow-container {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -28,7 +28,7 @@
   z-index: 1;
 }
 
-.hero-slide {
+.property-detail-page .hero-slide {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -38,19 +38,19 @@
   transition: opacity 1.2s ease-in-out;
 }
 
-.hero-slide.active {
+.property-detail-page .hero-slide.active {
   opacity: 1;
   z-index: 2;
 }
 
-.hero-overlay {
+.property-detail-page .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
   z-index: 5;
 }
 
-.hero-content {
+.property-detail-page .hero-content {
   position: relative;
   z-index: 20;
   color: var(--color-white);
@@ -68,7 +68,7 @@
   margin-bottom: 1rem;
 }
 
-.hero-content h1 {
+.property-detail-page .hero-content h1 {
   font-size: 3.5rem;
   color: var(--color-white);
   line-height: 1.1;
@@ -83,7 +83,7 @@
   letter-spacing: 1px;
 }
 
-.hero-shape-divider {
+.property-detail-page .hero-shape-divider {
   position: absolute;
   bottom: -1px; /* Solução: sobreposição para eliminar linha */
   left: 0;
@@ -93,14 +93,14 @@
   z-index: 15;
 }
 
-.hero-shape-divider svg {
+.property-detail-page .hero-shape-divider svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 100px;
 }
 
-.hero-shape-divider path {
+.property-detail-page .hero-shape-divider path {
   fill: var(--color-bg-light);
 }
 
@@ -528,29 +528,29 @@
 }
 
 @media (max-width: 900px) {
-  .hero-section {
+  .property-detail-page .hero-section {
     height: auto;
     min-height: 70vh;
     padding-top: 140px;
     padding-bottom: 80px;
   }
 
-  .hero-content h1 {
+  .property-detail-page .hero-content h1 {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 600px) {
-  .hero-section {
+  .property-detail-page .hero-section {
     padding-top: 160px;
     min-height: 80vh; /* Aumentado de 60vh para maior impacto mobile */
   }
 
-  .hero-content h1 {
+  .property-detail-page .hero-content h1 {
     font-size: 1.8rem;
   }
 
-  .detail-title {
+  .property-detail-page .detail-title {
     font-size: 1.6rem;
   }
 
@@ -603,7 +603,7 @@
     border-radius: 16px;
   }
 
-  .hero-shape-divider svg {
+  .property-detail-page .hero-shape-divider svg {
     height: 60px;
   }
 }
