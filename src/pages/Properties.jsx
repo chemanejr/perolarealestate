@@ -9,7 +9,7 @@ export default function Properties() {
   const { t } = useLanguage()
   const { properties, loading } = useProperties()
   const [currentPage, setCurrentPage] = React.useState(1)
-  const ITEMS_PER_PAGE = 9
+  const ITEMS_PER_PAGE = 24
 
   const totalPages = Math.ceil(properties.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
