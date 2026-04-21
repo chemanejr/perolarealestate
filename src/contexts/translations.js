@@ -8,8 +8,8 @@ export const translations = {
       cta: 'Falar Connosco'
     },
     hero: {
-      title: 'Sinta o Privilégio de Habitar o Extraordinário.',
-      subtitle: 'Uma curadoria privada para quem exige o topo. Onde o requinte arquitectónico encontra a discrição absoluta.',
+      title: 'Sinta o Privilégio de Habitar no Extraordinário.',
+      subtitle: 'Não vendemos apenas imóveis; curamos os palcos onde o seu sucesso ganha vida. Exclusividade absoluta para quem exige o incomparável.',
       search: {
         buy: 'Comprar',
         rent: 'Arrendar',
@@ -166,7 +166,7 @@ export const translations = {
     },
     hero: {
       title: 'Feel the Privilege of Inhabiting the Extraordinary.',
-      subtitle: 'A private curation for those who demand the pinnacle. Where architectural refinement meets absolute discretion.',
+      subtitle: 'We don\'t just sell properties; we curate the stages where your success comes to life. Absolute exclusivity for those who demand the incomparable.',
       search: {
         buy: 'Buy',
         rent: 'Rent',
