@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       title: 'Sinta o Privilégio de Habitar no Extraordinário.',
-      subtitle: 'Não vendemos apenas imóveis; curamos os palcos onde o seu sucesso ganha vida. Exclusividade absoluta para quem exige o incomparável.',
+      subtitle: 'A sua curadoria de elite para o mercado imobiliário de luxo em Moçambique.',
       search: {
         buy: 'Comprar',
         rent: 'Arrendar',
@@ -166,7 +166,7 @@ export const translations = {
     },
     hero: {
       title: 'Feel the Privilege of Inhabiting the Extraordinary.',
-      subtitle: 'We don\'t just sell properties; we curate the stages where your success comes to life. Absolute exclusivity for those who demand the incomparable.',
+      subtitle: 'Your elite curation for the luxury real estate market in Mozambique.',
       search: {
         buy: 'Buy',
         rent: 'Rent',
