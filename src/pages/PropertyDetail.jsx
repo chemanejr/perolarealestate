@@ -225,7 +225,7 @@ export default function PropertyDetail() {
             <h2>{t('property.location')}</h2>
             <div className="map-placeholder">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114781.56470001859!2d32.50209632465715!3d-25.867972744773418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee6fbbd1acda385%3A0xb330fe5e69bf17b!2sMaputo!5e0!3m2!1sen!2smz!4v1711820400000!5m2!1sen!2smz" 
+                src={property.map_embed || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114781.56470001859!2d32.50209632465715!3d-25.867972744773418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee6fbbd1acda385%3A0xb330fe5e69bf17b!2sMaputo!5e0!3m2!1sen!2smz!4v1711820400000!5m2!1sen!2smz"} 
                 width="100%" height="100%" style={{border: 0}} allowFullScreen="" loading="lazy">
               </iframe>
             </div>

@@ -100,7 +100,7 @@ export default function Contact() {
 
             <div className="contact-map">
               <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.3773199462615!2d32.58550131499522!3d-25.9556816835492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee6980009476ad3%3A0xed01bdf4e5f7a0d4!2sAvenida%20Julius%20Nyerere%2C%20Maputo!5e0!3m2!1sen!2smz!4v1711820500000!5m2!1sen!2smz" 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.908448992758!2d32.57171800576015!3d-25.969588609935744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69b313938f08d%3A0x8b06daaf6b234223!2sCosta%20do%20Sol%20Proximo%20a%20Casa%20Jov%20Rua%20do%20Hodpital%20Quarteirao%2018%20Numero%204!5e0!3m2!1spt-PT!2smz!4v1776815376022!5m2!1spt-PT!2smz" 
                  width="100%" 
                  height="100%" 
                  style={{border: 0}} 
