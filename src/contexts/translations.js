@@ -8,7 +8,7 @@ export const translations = {
       cta: 'Falar Connosco'
     },
     hero: {
-      title: 'O Teu Próximo Imóvel em Maputo, Sem Complicações.',
+      title: 'O Teu Próximo Imóvel em Maputo,\nSem Complicações.',
       subtitle: 'Compra, arrenda ou investe com quem conhece o mercado por dentro.',
       search: {
         buy: 'Comprar',
@@ -165,7 +165,7 @@ export const translations = {
       cta: 'Get in Touch'
     },
     hero: {
-      title: 'Your Next Property in Maputo, Without Complications.',
+      title: 'Your Next Property in Maputo,\nWithout Complications.',
       subtitle: 'Buy, rent, or invest with those who know the market from the inside.',
       search: {
         buy: 'Buy',
