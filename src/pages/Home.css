@@ -57,7 +57,7 @@
   font-size: 4.0rem;
   color: var(--color-white);
   line-height: 1.1;
-  margin-bottom: 4rem;
+  margin-bottom: 1.2rem;
   white-space: pre-line;
   font-weight: 800;
 }
@@ -607,7 +607,7 @@
   }
 
   .home-page .hero-content h1 { 
-    font-size: 1.75rem; 
+    font-size: 1.6rem; 
     line-height: 1.2;
     margin-top: 3.5rem;
     position: relative;
