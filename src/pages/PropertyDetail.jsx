@@ -83,10 +83,40 @@ export default function PropertyDetail() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFinalSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleFinalSubmit = async (e) => {
     e.preventDefault();
-    console.log('Lead Data Submitted:', formData);
-    alert('Obrigado! O nosso consultor entrará em contacto brevemente.');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xqkroryl", { // Usando um ID temporário que pode ser trocado ou substituído pelo email direto se o Formspree permitir
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `Novo Lead: ${property.title} (ID: ${property.id})`,
+          ...formData,
+          property_title: property.title,
+          property_id: property.id,
+          property_url: window.location.href
+        })
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("Ocorreu um erro ao enviar. Por favor, tente novamente.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Erro de conexão. Verifique a sua internet.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (loading) return <div className="property-detail-page"><div className="detail-container">A carregar...</div></div>
@@ -204,77 +234,89 @@ export default function PropertyDetail() {
 
         <div className="detail-sidebar">
           <div className="contact-card">
-            <div className="form-header">
-              <h3>Tenho Interesse</h3>
-              <p>Deixe os seus dados e o consultor entrará em contacto.</p>
-              <div className="form-step-indicator">Passo {formStep} de 4</div>
-            </div>
-
-            <div className="multi-step-form">
-              {formStep === 1 && (
-                <div className="form-step-content fade-in">
-                  <h4>Quando pretende comprar?</h4>
-                  <div className="option-list">
-                    {["Quero fechar o mais rapidamente possível", "Nos próximos 30 dias", "Em até 3 meses", "Em 6 meses ou mais", "Ainda estou a pesquisar"].map(opt => (
-                      <button key={opt} className="option-btn" onClick={() => handleOptionSelect('timing', opt)}>{opt}</button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {formStep === 2 && (
-                <div className="form-step-content fade-in">
-                  <h4>Como pretende pagar?</h4>
-                  <div className="option-list">
-                    {["Já tenho financiamento aprovado", "Vou pagar a pronto", "Estou em processo de aprovação", "Ainda não sei"].map(opt => (
-                      <button key={opt} className="option-btn" onClick={() => handleOptionSelect('payment', opt)}>{opt}</button>
-                    ))}
-                  </div>
-                  <button className="back-link" onClick={() => setFormStep(1)}>&larr; Voltar</button>
-                </div>
-              )}
-
-              {formStep === 3 && (
-                <div className="form-step-content fade-in">
-                  <h4>Qual o seu objetivo principal?</h4>
-                  <div className="option-list">
-                    {["Moradia Própria", "Investimento", "Segunda Residência / Férias", "Outro"].map(opt => (
-                      <button key={opt} className="option-btn" onClick={() => handleOptionSelect('objective', opt)}>{opt}</button>
-                    ))}
-                  </div>
-                  <button className="back-link" onClick={() => setFormStep(2)}>&larr; Voltar</button>
-                </div>
-              )}
-
-              {formStep === 4 && (
-                <form className="property-contact-form fade-in" onSubmit={handleFinalSubmit}>
-                  <div className="input-group">
-                    <label>NOME COMPLETO</label>
-                    <input name="name" type="text" placeholder="Seu nome" required onChange={handleInputChange} />
-                  </div>
-                  <div className="input-group">
-                    <label>WHATSAPP</label>
-                    <input name="phone" type="text" placeholder="+258" required onChange={handleInputChange} />
-                  </div>
-                  <div className="input-group">
-                    <label>E-MAIL</label>
-                    <input name="email" type="email" placeholder="Para receber detalhes" required onChange={handleInputChange} />
-                  </div>
-                  <button type="submit" className="btn-primary">ENVIAR AGORA</button>
-                  <button type="button" className="back-link" onClick={() => setFormStep(3)}>&larr; Voltar</button>
-                </form>
-              )}
-            </div>
-
-            <div className="agent-info">
-              <div className="agent-avatar">
-                <User size={24} color="var(--color-primary-dark)" />
+            {isSubmitted ? (
+              <div className="form-success-message fade-in">
+                <div className="success-icon">✓</div>
+                <h3>Obrigado!</h3>
+                <p>O seu pedido foi enviado com sucesso. O nosso consultor entrará em contacto brevemente.</p>
               </div>
-              <div>
-                <span className="agent-label">{t('property.sidebar.agentLabel')}</span>
-                <span className="agent-name">Pérola Real Estate</span>
-              </div>
-            </div>
+            ) : (
+              <>
+                <div className="form-header">
+                  <h3>Tenho Interesse</h3>
+                  <p>Deixe os seus dados e o consultor entrará em contacto.</p>
+                  <div className="form-step-indicator">Passo {formStep} de 4</div>
+                </div>
+
+                <div className="multi-step-form">
+                  {formStep === 1 && (
+                    <div className="form-step-content fade-in">
+                      <h4>Quando pretende comprar?</h4>
+                      <div className="option-list">
+                        {["Quero fechar o mais rapidamente possível", "Nos próximos 30 dias", "Em até 3 meses", "Em 6 meses ou mais", "Ainda estou a pesquisar"].map(opt => (
+                          <button key={opt} className="option-btn" onClick={() => handleOptionSelect('timing', opt)}>{opt}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {formStep === 2 && (
+                    <div className="form-step-content fade-in">
+                      <h4>Como pretende pagar?</h4>
+                      <div className="option-list">
+                        {["Já tenho financiamento aprovado", "Vou pagar a pronto", "Estou em processo de aprovação", "Ainda não sei"].map(opt => (
+                          <button key={opt} className="option-btn" onClick={() => handleOptionSelect('payment', opt)}>{opt}</button>
+                        ))}
+                      </div>
+                      <button className="back-link" onClick={() => setFormStep(1)}>&larr; Voltar</button>
+                    </div>
+                  )}
+
+                  {formStep === 3 && (
+                    <div className="form-step-content fade-in">
+                      <h4>Qual o seu objetivo principal?</h4>
+                      <div className="option-list">
+                        {["Moradia Própria", "Investimento", "Segunda Residência / Férias", "Outro"].map(opt => (
+                          <button key={opt} className="option-btn" onClick={() => handleOptionSelect('objective', opt)}>{opt}</button>
+                        ))}
+                      </div>
+                      <button className="back-link" onClick={() => setFormStep(2)}>&larr; Voltar</button>
+                    </div>
+                  )}
+
+                  {formStep === 4 && (
+                    <form className="property-contact-form fade-in" onSubmit={handleFinalSubmit}>
+                      <div className="input-group">
+                        <label>NOME COMPLETO</label>
+                        <input name="name" type="text" placeholder="O seu nome completo" required onChange={handleInputChange} />
+                      </div>
+                      <div className="input-group">
+                        <label>WHATSAPP</label>
+                        <input name="phone" type="text" placeholder="+258" required onChange={handleInputChange} />
+                      </div>
+                      <div className="input-group">
+                        <label>E-MAIL</label>
+                        <input name="email" type="email" placeholder="Para receber detalhes" required onChange={handleInputChange} />
+                      </div>
+                      <button type="submit" className="btn-primary" disabled={isSubmitting}>
+                        {isSubmitting ? 'A ENVIAR...' : 'ENVIAR AGORA'}
+                      </button>
+                      <button type="button" className="back-link" onClick={() => setFormStep(3)}>&larr; Voltar</button>
+                    </form>
+                  )}
+                </div>
+
+                <div className="agent-info">
+                  <div className="agent-avatar">
+                    <User size={24} color="var(--color-primary-dark)" />
+                  </div>
+                  <div>
+                    <span className="agent-label">{t('property.sidebar.agentLabel')}</span>
+                    <span className="agent-name">Pérola Real Estate</span>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
