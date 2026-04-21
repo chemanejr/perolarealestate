@@ -62,6 +62,38 @@
   margin-left: auto;
 }
 
+.filter-input-wrapper {
+  flex: 1.2;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.filter-input-wrapper input {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+}
+
+.filter-select input {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+}
+
 .filter-btn {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
