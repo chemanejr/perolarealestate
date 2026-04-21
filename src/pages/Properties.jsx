@@ -8,6 +8,12 @@ import './Properties.css'
 export default function Properties() {
   const { t } = useLanguage()
   const { properties, loading } = useProperties()
+  const [currentPage, setCurrentPage] = React.useState(1)
+  const ITEMS_PER_PAGE = 9
+
+  const totalPages = Math.ceil(properties.length / ITEMS_PER_PAGE)
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const currentProperties = properties.slice(startIndex, startIndex + ITEMS_PER_PAGE)
 
   return (
     <div className="properties-page">
@@ -55,18 +61,41 @@ export default function Properties() {
       </div>
 
       <div className="catalog-grid">
-        {loading ? <p>A carregar imóveis...</p> : properties.map(p => (
+        {loading ? <p>A carregar imóveis...</p> : currentProperties.map(p => (
           <PropertyCard key={p.id} {...p} />
         ))}
       </div>
 
-      <div className="pagination">
-        <button className="page-nav"><ChevronLeft size={16} /></button>
-        <button className="page-num active">1</button>
-        <button className="page-num">2</button>
-        <button className="page-num">3</button>
-        <button className="page-nav"><ChevronRight size={16} /></button>
-      </div>
+      {/* Paginação Dinâmica: Só aparece se houver mais de uma página */}
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button 
+            className="page-nav" 
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            <ChevronLeft size={16} />
+          </button>
+          
+          {[...Array(totalPages)].map((_, idx) => (
+            <button 
+              key={idx + 1}
+              className={`page-num ${currentPage === idx + 1 ? 'active' : ''}`}
+              onClick={() => setCurrentPage(idx + 1)}
+            >
+              {idx + 1}
+            </button>
+          ))}
+          
+          <button 
+            className="page-nav" 
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      )}
     </div>
   )
 }
