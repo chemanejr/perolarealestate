@@ -47,7 +47,7 @@ export default function Contact() {
 
               <div className="input-group full-width">
                 <label>{t('contact.form.message')}</label>
-                <textarea placeholder={t('contact.form.messagePlaceholder')} rows="6"></textarea>
+                <textarea placeholder={t('contact.form.messagePlaceholder')} rows="4"></textarea>
               </div>
 
               <button type="submit" className="btn-primary">{t('contact.form.submit')}</button>
