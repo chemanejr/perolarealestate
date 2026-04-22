@@ -455,10 +455,20 @@
 .cta-header h2 {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
+  color: var(--color-primary-dark);
 }
 
 .cta-header p {
   color: var(--color-text-muted);
+}
+
+.cta-form-box {
+  background-color: #f6f3ed;
+  padding: 2.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .cta-form {
@@ -475,44 +485,66 @@
 
 .input-group label {
   display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
+  font-size: 0.70rem;
+  font-weight: 700;
+  color: #000;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
-.input-group input, .input-group textarea {
+.input-group input, .input-group select {
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
   background: transparent;
   padding: 0.8rem 0;
   outline: none;
   font-size: 0.95rem;
+  color: #000;
+  font-family: var(--font-body);
+  transition: border-bottom-color 0.3s ease;
 }
 
-.input-group input:focus, .input-group textarea:focus {
+.input-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  background: transparent;
+  padding: 0.8rem 0 0 0;
+  outline: none;
+  font-size: 0.95rem;
+  color: #000;
+  font-family: var(--font-body);
+  min-height: unset;
+  height: auto;
+  resize: vertical;
+}
+
+.input-group input::placeholder, .input-group textarea::placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus {
   border-bottom-color: var(--color-primary);
 }
 
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-white);
-  padding: 0.7rem 1.8rem; /* Reduced size */
+  padding: 0.7rem 1.8rem;
   font-weight: 700;
-  font-size: 0.8rem; /* Reduced size */
+  font-size: 0.8rem;
   letter-spacing: 0.4px;
   border-radius: 50px;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   border: none;
   box-shadow: 0 4px 14px rgba(111, 162, 67, 0.4);
 }
 
 .cta-form .btn-primary {
-  align-self: center; /* Centrar botão de contacto */
-  margin-left: 0; 
+  align-self: center;
+  margin: 0.5rem auto 0;
 }
 
 @media (max-width: 900px) {

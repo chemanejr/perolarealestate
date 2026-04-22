@@ -213,23 +213,25 @@ export default function Home() {
             <h2>Pronto Para Transformar a Sua Procura?</h2>
             <p>Agende uma consultoria gratuita com a nossa equipa.</p>
           </div>
-          <form className="cta-form">
-            <div className="form-row">
-              <div className="input-group">
-                <label>NOME</label>
-                <input type="text" placeholder="O seu nome completo" />
+          <div className="cta-form-box">
+            <form className="cta-form">
+              <div className="form-row">
+                <div className="input-group">
+                  <label>NOME</label>
+                  <input type="text" placeholder="O seu nome completo" />
+                </div>
+                <div className="input-group">
+                  <label>TELEFONE/WHATSAPP</label>
+                  <input type="text" placeholder="+258" />
+                </div>
               </div>
-              <div className="input-group">
-                <label>TELEFONE/WHATSAPP</label>
-                <input type="text" placeholder="+258" />
+              <div className="input-group full-width">
+                <label>MENSAGEM</label>
+                <textarea placeholder="Como podemos ajudar?" rows="2"></textarea>
               </div>
-            </div>
-            <div className="input-group full-width">
-              <label>MENSAGEM</label>
-              <textarea placeholder="Como podemos ajudar?" rows="3"></textarea>
-            </div>
-            <button type="submit" className="btn-primary">ENVIAR MENSAGEM</button>
-          </form>
+              <button type="submit" className="btn-primary">ENVIAR MENSAGEM</button>
+            </form>
+          </div>
         </div>
       </section>
     </div>
