@@ -684,13 +684,13 @@
     font-size: 1.8rem;
   }
 
-  .hero-shape-divider svg {
-    height: 20px;
+  .home-page .hero-shape-divider svg {
+    height: 35px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-shape-divider svg {
-    height: 12px;
+  .home-page .hero-shape-divider svg {
+    height: 20px;
   }
 }
