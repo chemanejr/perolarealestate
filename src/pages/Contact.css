@@ -60,12 +60,12 @@
   width: 100%;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.2); /* Linha restaurada e mais visível */
-  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 0.8rem 0 0.2rem 0; /* Padding inferior reduzido para aproximar a linha */
   font-size: 0.95rem;
   outline: none;
   font-family: var(--font-body);
-  color: #000; /* Texto preto para legibilidade */
+  color: #000;
   transition: all 0.3s ease;
 }
 
@@ -87,8 +87,9 @@
 .contact-form button[type="submit"] {
   display: flex;
   align-items: center;
+  justify-content: center; /* Garante que o conteúdo do botão está centrado */
   gap: 0.5rem;
-  margin-top: 0.5rem; /* Espaçamento mínimo conforme solicitado */
+  margin: 0.5rem auto 0; /* Margens auto centram o botão horizontalmente */
   background-color: var(--color-primary);
   color: var(--color-white);
   padding: 1.1rem 2.8rem;
