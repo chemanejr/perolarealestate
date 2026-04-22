@@ -98,24 +98,24 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="contact-map">
-              <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.908448992758!2d32.57171800576015!3d-25.969588609935744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69b313938f08d%3A0x8b06daaf6b234223!2sCosta%20do%20Sol%20Proximo%20a%20Casa%20Jov%20Rua%20do%20Hodpital%20Quarteirao%2018%20Numero%204!5e0!3m2!1spt-PT!2smz!4v1776815376022!5m2!1spt-PT!2smz" 
-                 width="100%" 
-                 height="100%" 
-                 style={{border: 0}} 
-                 allowFullScreen="" 
-                 loading="lazy" 
-                 referrerPolicy="no-referrer-when-downgrade">
-              </iframe>
-              <div className="map-overlay">
-                <span className="overlay-label">{t('contact.map.label')}</span>
-                <p>{t('contact.map.text')}</p>
-              </div>
-              <div className="chat-badge">
-                <MessageSquare size={20} color="white" />
-              </div>
-            </div>
+        </div>
+
+        <div className="contact-map">
+          <iframe 
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.908448992758!2d32.57171800576015!3d-25.969588609935744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69b313938f08d%3A0x8b06daaf6b234223!2sCosta%20do%20Sol%20Proximo%20a%20Casa%20Jov%20Rua%20do%20Hodpital%20Quarteirao%2018%20Numero%204!5e0!3m2!1spt-PT!2smz!4v1776815376022!5m2!1spt-PT!2smz" 
+             width="100%" 
+             height="100%" 
+             style={{border: 0}} 
+             allowFullScreen="" 
+             loading="lazy" 
+             referrerPolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div className="map-overlay">
+            <span className="overlay-label">{t('contact.map.label')}</span>
+            <p>{t('contact.map.text')}</p>
+          </div>
+          <div className="chat-badge">
+            <MessageSquare size={20} color="white" />
           </div>
         </div>
       </div>

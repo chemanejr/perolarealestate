@@ -632,7 +632,7 @@
   }
 
   .map-placeholder {
-    height: 400px; /* Aumentado de 280px */
+    height: 320px; /* Reduzido de 400px para mobile */
     border-radius: 16px;
   }
 
