@@ -25,7 +25,7 @@ export default function Contact() {
                 </div>
                 <div className="input-group">
                   <label>{t('contact.form.company')}</label>
-                  <input type="text" placeholder={t('contact.form.companyPlaceholder')} />
+                  <input type="email" placeholder={t('contact.form.companyPlaceholder')} />
                 </div>
               </div>
 

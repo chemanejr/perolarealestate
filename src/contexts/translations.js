@@ -73,8 +73,8 @@ export const translations = {
       form: {
         name: 'NOME',
         namePlaceholder: 'O seu nome completo',
-        company: 'EMPRESA (OPCIONAL)',
-        companyPlaceholder: 'Nome da sua organização',
+        company: 'EMAIL',
+        companyPlaceholder: 'O seu email',
         phone: 'TELEFONE/WHATSAPP',
         phonePlaceholder: '+258',
         subject: 'ASSUNTO',
