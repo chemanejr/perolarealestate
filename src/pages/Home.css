@@ -685,6 +685,12 @@
   }
 
   .hero-shape-divider svg {
-    height: 35px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-shape-divider svg {
+    height: 12px;
   }
 }
