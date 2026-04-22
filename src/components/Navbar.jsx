@@ -39,6 +39,9 @@ export default function Navbar() {
           <li><NavLink to="/imoveis" onClick={closeMenu}>{t('nav.properties')}</NavLink></li>
           <li><NavLink to="/sobre" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
           <li><NavLink to="/contacto" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
+          <li className="admin-mobile-wrapper">
+            <AdminControls />
+          </li>
         </ul>
 
         <div 
@@ -54,7 +57,9 @@ export default function Navbar() {
           {t('nav.cta')}
         </NavLink>
 
-        <AdminControls />
+        <div className="admin-desktop-wrapper">
+          <AdminControls />
+        </div>
 
         <button
           className={`navbar-hamburger ${menuOpen ? 'is-open' : ''}`}

@@ -224,6 +224,10 @@
   z-index: 999;
 }
 
+.admin-mobile-wrapper {
+  display: none;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .navbar-logo {
@@ -251,6 +255,16 @@
 
   .navbar-cta {
     display: none;
+  }
+
+  .admin-desktop-wrapper {
+    display: none;
+  }
+
+  .admin-mobile-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
   }
 
   .navbar-overlay {
