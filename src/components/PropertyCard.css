@@ -247,7 +247,7 @@
 .property-delete-btn {
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
   z-index: 20;
   background: rgba(220, 38, 38, 0.85);
   color: white;
