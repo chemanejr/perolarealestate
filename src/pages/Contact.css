@@ -48,37 +48,30 @@
 .contact-form .input-group label {
   display: block;
   font-size: 0.70rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
+  font-weight: 700; /* Mais negrito para visibilidade */
+  color: #000; /* Preto em vez de cinza */
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
 }
 
 .contact-form input, 
-.contact-form select {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid var(--color-border);
-  padding: 0.8rem 0;
-  font-size: 0.95rem;
-  outline: none;
-  font-family: var(--font-body);
-  color: var(--color-text-main);
-  transition: border-bottom-color 0.3s ease;
-}
-
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   background-color: transparent;
   border: none;
-  border-bottom: none; /* Linha removida conforme pedido */
+  border-bottom: 1px solid rgba(0,0,0,0.2); /* Linha restaurada e mais visível */
   padding: 0.8rem 0;
   font-size: 0.95rem;
   outline: none;
   font-family: var(--font-body);
-  color: var(--color-text-main);
+  color: #000; /* Texto preto para legibilidade */
   transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(0,0,0,0.4); /* Placeholder levemente mais escuro */
 }
 
 .contact-form .input-group.full-width {
@@ -95,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem; /* Reduzido de 1.5rem conforme solicitado */
+  margin-top: 0.5rem; /* Espaçamento mínimo conforme solicitado */
   background-color: var(--color-primary);
   color: var(--color-white);
   padding: 1.1rem 2.8rem;
