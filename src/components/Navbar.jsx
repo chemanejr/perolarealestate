@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import AdminControls from './AdminControls'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -52,6 +53,8 @@ export default function Navbar() {
         <NavLink to="/contacto" className="navbar-cta" onClick={closeMenu}>
           {t('nav.cta')}
         </NavLink>
+
+        <AdminControls />
 
         <button
           className={`navbar-hamburger ${menuOpen ? 'is-open' : ''}`}

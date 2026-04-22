@@ -1,0 +1,273 @@
+.add-prop-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeInBackdrop 0.2s ease;
+}
+
+.add-prop-modal {
+  background: white;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  border-top: 4px solid var(--color-primary);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.add-prop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 2rem 1.2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+.add-prop-header h2 {
+  font-size: 1.3rem;
+  color: var(--color-dark);
+}
+
+.add-prop-close {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.add-prop-close:hover { background: #eee; }
+
+.add-prop-form {
+  padding: 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-prop-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.add-prop-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.add-prop-field--wide {
+  grid-column: span 2;
+}
+
+.add-prop-field label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.add-prop-field input,
+.add-prop-field select,
+.add-prop-field textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  color: #000;
+  outline: none;
+  font-family: var(--font-body);
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.add-prop-field select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.add-prop-field input:focus,
+.add-prop-field select:focus,
+.add-prop-field textarea:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+.add-prop-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-prop-field input::placeholder,
+.add-prop-field textarea::placeholder {
+  color: rgba(0,0,0,0.35);
+}
+
+/* Upload */
+.add-prop-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  border: 1.5px dashed rgba(90,132,54,0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: all 0.2s;
+  background: rgba(90,132,54,0.04);
+}
+
+.add-prop-upload-btn:hover {
+  background: rgba(90,132,54,0.08);
+  border-color: var(--color-primary);
+}
+
+.add-prop-img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.add-prop-img-thumb {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.add-prop-img-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-prop-img-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(220,38,38,0.85);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-prop-img-remove:hover { background: #dc2626; }
+
+.add-prop-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  border-left: 3px solid #dc2626;
+}
+
+.add-prop-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.add-prop-cancel {
+  padding: 0.8rem 1.8rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 50px;
+  background: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.add-prop-cancel:hover { background: #f5f5f5; }
+
+.add-prop-submit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(111,162,67,0.3);
+  font-family: var(--font-body);
+}
+
+.add-prop-submit:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(111,162,67,0.4);
+}
+
+.add-prop-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.add-prop-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--color-primary);
+  gap: 1rem;
+}
+
+.add-prop-success h3 {
+  font-size: 1.4rem;
+  color: var(--color-dark);
+}
+
+.add-prop-success p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.spin { animation: spin 1s linear infinite; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

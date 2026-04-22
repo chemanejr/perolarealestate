@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, Bed, Bath, Square, ChevronLeft, ChevronRight } from 'lucide-react'
+import { MapPin, Bed, Bath, Square, ChevronLeft, ChevronRight, Trash2, Loader } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useAuth } from '../contexts/AuthContext'
+import { supabase } from '../lib/supabase'
 import './PropertyCard.css'
 
-export default function PropertyCard({ id, images = [], image, title, price, location, beds, baths, area, status, dealType, exclusive }) {
+export default function PropertyCard({ id, images = [], image, title, price, location, beds, baths, area, status, dealType, exclusive, onDelete }) {
   const { t } = useLanguage()
+  const { isAdmin } = useAuth()
   const displayImages = images && images.length > 0 ? images : [image];
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [deleting, setDeleting]     = useState(false);
+
 
   // Dynamic status translation
   const getStatusLabel = (statusStr) => {
@@ -32,11 +37,31 @@ export default function PropertyCard({ id, images = [], image, title, price, loc
   };
 
 
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if (!window.confirm(`Remover "${title}" do website?`)) return
+    setDeleting(true)
+    const { error } = await supabase.from('properties').delete().eq('id', id)
+    if (!error && onDelete) onDelete(id)
+    setDeleting(false)
+  }
+
   return (
     <div className="property-card">
       <div className="property-image-wrapper">
         <img src={displayImages[currentIdx]} alt={title} className="property-image" loading="lazy" decoding="async" />
         
+        {isAdmin && (
+          <button
+            className="property-delete-btn"
+            onClick={handleDelete}
+            disabled={deleting}
+            title="Remover imóvel"
+          >
+            {deleting ? <Loader size={14} className="spin" /> : <Trash2 size={14} />}
+          </button>
+        )}
         {displayImages.length > 1 && (
           <>
             <button className="slider-arrow slider-prev" onClick={prevImage} aria-label="Previous image">

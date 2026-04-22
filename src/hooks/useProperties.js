@@ -1,42 +1,96 @@
 import { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabase';
 
 export function useProperties() {
   const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading]       = useState(true);
 
-  useEffect(() => {
-    fetch('/properties.json')
-      .then(res => res.json())
-      .then(data => {
-        const mapped = data.map(p => {
-          const numericPrice = parseInt((p.price || '').replace(/\D/g, ''), 10) || 0;
-          const dealType = numericPrice > 500000 ? 'Venda' : 'Arrendamento';
-          
-          return {
-            id: p.id,
-            image: p.images && p.images.length > 0 ? p.images[0] : '/property_placeholder.png',
-            title: p.title,
-            price: p.price,
-            location: p.location,
-            beds: parseInt(p.bedrooms || '0', 10),
-            baths: parseInt(p.bathrooms || '0', 10),
-            area: Math.floor(Math.random() * 300) + 100, // random fallback for area
-            status: p.type === 'Apartment' ? 'Apartamento' : 'Moradia',
-            dealType: dealType,
-            exclusive: p.id % 3 === 0,
-            images: p.images || [],
-            description: p.description
-          };
-        });
-        setProperties(mapped);
-      })
-      .catch(err => {
-        console.error("Failed to fetch properties", err);
-      })
-      .finally(() => {
-        setLoading(false);
+  const mapRow = (p) => {
+    const numericPrice = parseInt((p.price || '').replace(/\D/g, ''), 10) || 0;
+    const dealType     = p.purpose || (numericPrice > 500000 ? 'Venda' : 'Arrendamento');
+    const typeMap = {
+      Apartment: 'Apartamento',
+      House:     'Moradia',
+      Villa:     'Vivenda',
+      Office:    'Escritório',
+      Land:      'Terreno',
+    };
+    return {
+      id:          p.id,
+      image:       p.images && p.images.length > 0 ? p.images[0] : '/property_placeholder.png',
+      title:       p.title,
+      price:       p.price,
+      location:    p.location,
+      beds:        parseInt(p.bedrooms  || '0', 10),
+      baths:       parseInt(p.bathrooms || '0', 10),
+      area:        p.area ? parseInt(p.area, 10) : Math.floor(Math.random() * 300) + 100,
+      status:      typeMap[p.type] || p.type || 'Imóvel',
+      dealType:    dealType,
+      exclusive:   false,
+      images:      p.images || [],
+      description: p.description,
+      map_embed:   p.map_embed,
+      source:      p.source || 'supabase',
+    };
+  };
+
+  const fetchProperties = async () => {
+    setLoading(true);
+    try {
+      // Try Supabase first
+      const { data, error } = await supabase
+        .from('properties')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (!error && data && data.length > 0) {
+        setProperties(data.map(mapRow));
+        return;
+      }
+    } catch {
+      // Supabase unavailable — fall through to JSON
+    }
+
+    // Fallback to local JSON
+    try {
+      const res  = await fetch('/properties.json');
+      const data = await res.json();
+      const mapped = data.map(p => {
+        const numericPrice = parseInt((p.price || '').replace(/\D/g, ''), 10) || 0;
+        const dealType     = numericPrice > 500000 ? 'Venda' : 'Arrendamento';
+        return {
+          id:          p.id,
+          image:       p.images && p.images.length > 0 ? p.images[0] : '/property_placeholder.png',
+          title:       p.title,
+          price:       p.price,
+          location:    p.location,
+          beds:        parseInt(p.bedrooms  || '0', 10),
+          baths:       parseInt(p.bathrooms || '0', 10),
+          area:        Math.floor(Math.random() * 300) + 100,
+          status:      p.type === 'Apartment' ? 'Apartamento' : 'Moradia',
+          dealType:    dealType,
+          exclusive:   p.id % 3 === 0,
+          images:      p.images || [],
+          description: p.description,
+          map_embed:   p.map_embed,
+          source:      'json',
+        };
       });
-  }, []);
+      setProperties(mapped);
+    } catch (err) {
+      console.error('Failed to fetch properties', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  return { properties, loading };
+  useEffect(() => { fetchProperties(); }, []);
+
+  const deleteProperty = async (id) => {
+    const { error } = await supabase.from('properties').delete().eq('id', id);
+    if (!error) setProperties(prev => prev.filter(p => p.id !== id));
+    return !error;
+  };
+
+  return { properties, loading, refetch: fetchProperties, deleteProperty };
 }

@@ -8,26 +8,29 @@ import PropertyDetail from './pages/PropertyDetail'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import { LanguageProvider } from './contexts/LanguageContext'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
   return (
     <LanguageProvider>
-      <Router>
-        <div className="app-container">
-          <ScrollToTop />
-          <Navbar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/imoveis" element={<Properties />} />
-              <Route path="/imoveis/:id" element={<PropertyDetail />} />
-              <Route path="/sobre" element={<About />} />
-              <Route path="/contacto" element={<Contact />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <div className="app-container">
+            <ScrollToTop />
+            <Navbar />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/imoveis" element={<Properties />} />
+                <Route path="/imoveis/:id" element={<PropertyDetail />} />
+                <Route path="/sobre" element={<About />} />
+                <Route path="/contacto" element={<Contact />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </AuthProvider>
     </LanguageProvider>
   )
 }
