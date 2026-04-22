@@ -93,7 +93,7 @@ export const translations = {
         officeDetail: 'Costa do Sol, Rua do Hospital',
         city: 'Próximo à Casa Jov, Maputo',
         hours: 'HORÁRIO',
-        week: 'Segunda - Sexta: 07:00 - 17:30',
+        week: 'Segunda - Sexta: 07:30 - 17:30',
         sat: 'Sábado: 07:30 - 15:00',
         note: 'Nota: Marcações disponíveis 24/7 (Visitas no horário acima)'
       },
@@ -251,7 +251,7 @@ export const translations = {
         officeDetail: 'Costa do Sol, Hospital Road',
         city: 'Near Casa Jov, Maputo',
         hours: 'HOURS',
-        week: 'Monday - Friday: 07:00 - 17:30',
+        week: 'Monday - Friday: 07:30 - 17:30',
         sat: 'Saturday: 07:30 - 15:00',
         note: 'Note: Bookings available 24/7 (Site visits during hours above)'
       },
