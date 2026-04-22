@@ -118,6 +118,8 @@ export default function Contact() {
         <div className="chat-badge">
           <MessageSquare size={20} color="white" />
         </div>
+      </div>
     </div>
+  </div>
   )
 }
