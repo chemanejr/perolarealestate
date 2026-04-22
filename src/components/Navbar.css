@@ -262,9 +262,13 @@
   }
 
   .admin-mobile-wrapper {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.5rem;
     display: flex;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0;
+    border-bottom: none !important;
   }
 
   .navbar-overlay {
