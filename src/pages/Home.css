@@ -588,8 +588,7 @@
   }
 
   .search-bar {
-    margin-right: 2rem;
-    margin-left: auto;
+    margin: 0 auto;
     max-width: 580px;
   }
 
@@ -607,7 +606,7 @@
     padding: 1.2rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
-    margin: 0 1rem 0 auto;
+    margin: 0 auto;
     width: 92%;
     max-width: 480px;
   }
