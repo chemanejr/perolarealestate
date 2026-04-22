@@ -85,16 +85,17 @@ export const translations = {
       },
       info: {
         phone: 'TELEFONE',
-        phoneSecondary: '+258 874 69325',
-        phonePrimary: '+258 8 483 69329',
+        phoneSecondary: '+258 87 469 3255',
+        phonePrimary: '+258 84 483 6932',
         email: 'EMAIL',
         emailAddress: 'delfinafumo.df@gmail.com',
         office: 'ESCRITÓRIO',
-        officeDetail: 'Av. Julius Nyerere, Edifício Sapphire',
-        city: 'Maputo, Moçambique',
+        officeDetail: 'Costa do Sol, Rua do Hospital',
+        city: 'Próximo à Casa Jov, Maputo',
         hours: 'HORÁRIO',
-        week: 'Segunda - Sábado: 07:00 - 18:00',
-        sat: ''
+        week: 'Segunda - Sexta: 07:00 - 17:30',
+        sat: 'Sábado: 07:30 - 15:00',
+        note: 'Nota: Marcações disponíveis 24/7 (Visitas no horário acima)'
       },
       map: {
         label: 'LOCALIZAÇÃO PRIME',
@@ -247,11 +248,12 @@ export const translations = {
         email: 'EMAIL',
         emailAddress: 'delfinafumo.df@gmail.com',
         office: 'OFFICE',
-        officeDetail: 'Julius Nyerere Ave, Sapphire Building',
-        city: 'Maputo, Mozambique',
+        officeDetail: 'Costa do Sol, Hospital Road',
+        city: 'Near Casa Jov, Maputo',
         hours: 'HOURS',
-        week: 'Monday - Saturday: 07:00 - 18:00',
-        sat: ''
+        week: 'Monday - Friday: 07:00 - 17:30',
+        sat: 'Saturday: 07:30 - 15:00',
+        note: 'Note: Bookings available 24/7 (Site visits during hours above)'
       },
       map: {
         label: 'PRIME LOCATION',

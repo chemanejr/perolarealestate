@@ -95,6 +95,7 @@ export default function Contact() {
                 <span className="info-label">{t('contact.info.hours')}</span>
                 <p>{t('contact.info.week')}</p>
                 <p>{t('contact.info.sat')}</p>
+                <p className="light-text" style={{marginTop: '0.5rem'}}>{t('contact.info.note')}</p>
               </div>
             </div>
 
