@@ -78,7 +78,7 @@ export const translations = {
         phone: 'TELEFONE/WHATSAPP',
         phonePlaceholder: '+258',
         subject: 'ASSUNTO',
-        subjects: ['Interessa em Comprar', 'Interessa em Arrendar', 'Gestão de Propriedade', 'Outro'],
+        subjects: ['Interesse em Comprar', 'Interesse em Arrendar', 'Gestão de Propriedade', 'Outro'],
         message: 'MENSAGEM',
         messagePlaceholder: 'Como podemos ajudar?',
         submit: 'ENVIAR MENSAGEM →'
