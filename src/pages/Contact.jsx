@@ -93,9 +93,13 @@ export default function Contact() {
               </div>
               <div className="info-text">
                 <span className="info-label">{t('contact.info.hours')}</span>
-                <p>{t('contact.info.week')}</p>
-                <p>{t('contact.info.sat')}</p>
-                <p className="light-text" style={{marginTop: '0.5rem'}}>{t('contact.info.note')}</p>
+                <p><strong>{t('contact.info.labelWeek')}:</strong> {t('contact.info.week')}</p>
+                <p><strong>{t('contact.info.labelSat')}:</strong> {t('contact.info.sat')}</p>
+                <div className="hours-note" style={{marginTop: '1rem', padding: '0.8rem', background: 'rgba(90, 132, 54, 0.05)', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)'}}>
+                  <p style={{color: 'var(--color-primary)', fontWeight: '600', fontSize: '0.85rem', lineHeight: '1.4'}}>
+                    {t('contact.info.note')}
+                  </p>
+                </div>
               </div>
             </div>
 
