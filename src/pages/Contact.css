@@ -83,6 +83,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 1.5rem; /* Adicionado para dar respiro entre a mensagem e o botão */
   background-color: var(--color-primary);
   color: var(--color-white);
   padding: 1.1rem 2.8rem;
