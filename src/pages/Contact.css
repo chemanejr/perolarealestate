@@ -61,7 +61,7 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(0,0,0,0.2);
-  padding: 0.8rem 0 0.2rem 0; /* Padding inferior reduzido para aproximar a linha */
+  padding: 0.8rem 0 0 0; /* Padding inferior removido para subir a linha ao máximo */
   font-size: 0.95rem;
   outline: none;
   font-family: var(--font-body);
