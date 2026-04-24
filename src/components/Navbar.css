@@ -147,13 +147,14 @@
 .navbar-mobile-links {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 100%;
+  right: -300px;
+  width: 280px;
   height: 100vh;
   background: var(--color-white);
   display: flex;
   flex-direction: column;
-  padding: 80px 2rem 2rem; /* Added top padding for logo area */
+  padding: 80px 2rem 2rem;
+  box-shadow: -4px 0 30px rgba(0,0,0,0.1);
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   list-style: none;
   z-index: 1001;
