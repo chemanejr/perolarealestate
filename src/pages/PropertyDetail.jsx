@@ -99,7 +99,7 @@ WhatsApp: ${formData.phone}.
 Email: ${formData.email}.`;
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.link/so138v?text=${encodedMessage}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=258878469329&text=${encodedMessage}`, '_blank');
     
     setIsSubmitting(false);
     setIsSubmitted(true);

@@ -22,7 +22,7 @@ export default function Contact() {
     e.preventDefault();
     const message = `Olá, o meu nome é ${formData.name}. Email: ${formData.email}. Telefone: ${formData.phone}. Assunto: ${formData.subject}. Mensagem: ${formData.message}`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.link/so138v?text=${encodedMessage}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=258878469329&text=${encodedMessage}`, '_blank');
   };
 
   return (

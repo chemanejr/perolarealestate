@@ -32,7 +32,7 @@ export default function Home() {
     e.preventDefault();
     const message = `Olá, o meu nome é ${ctaData.name}. Telefone: ${ctaData.phone}. Mensagem: ${ctaData.message}`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.link/so138v?text=${encodedMessage}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=258878469329&text=${encodedMessage}`, '_blank');
   };
 
   useEffect(() => {
