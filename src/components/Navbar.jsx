@@ -18,6 +18,14 @@ export default function Navbar() {
           <span>Pérola Real Estate</span>
         </NavLink>
 
+        {/* Desktop Links - Hidden on Mobile via CSS */}
+        <ul className="navbar-desktop-links">
+          <li><NavLink to="/" end>{t('nav.home')}</NavLink></li>
+          <li><NavLink to="/imoveis">{t('nav.properties')}</NavLink></li>
+          <li><NavLink to="/sobre">{t('nav.about')}</NavLink></li>
+          <li><NavLink to="/contacto">{t('nav.contact')}</NavLink></li>
+        </ul>
+
         <div className="navbar-right">
           <div 
             className={`language-toggle ${lang === 'EN' ? 'is-en' : 'is-pt'}`}
@@ -26,6 +34,10 @@ export default function Navbar() {
             <div className="toggle-thumb" />
             <span className="lang-pt">PT</span>
             <span className="lang-en">EN</span>
+          </div>
+
+          <div className="navbar-desktop-admin">
+            <AdminControls />
           </div>
 
           <button
@@ -38,7 +50,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Content */}
-        <ul className={`navbar-links${menuOpen ? ' navbar-links--open' : ''}`}>
+        <ul className={`navbar-mobile-links${menuOpen ? ' navbar-links--open' : ''}`}>
           <li><NavLink to="/" end onClick={closeMenu}>{t('nav.home')}</NavLink></li>
           <li><NavLink to="/imoveis" onClick={closeMenu}>{t('nav.properties')}</NavLink></li>
           <li><NavLink to="/sobre" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
