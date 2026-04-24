@@ -146,15 +146,14 @@
 /* ── Mobile Menu Content ── */
 .navbar-mobile-links {
   position: fixed;
-  top: 75px; /* Updated to match mobile navbar height */
-  right: -300px;
-  width: 280px;
-  height: calc(100vh - 75px);
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
   background: var(--color-white);
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  box-shadow: -4px 4px 30px rgba(0,0,0,0.1);
+  padding: 80px 2rem 2rem; /* Added top padding for logo area */
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   list-style: none;
   z-index: 1001;
