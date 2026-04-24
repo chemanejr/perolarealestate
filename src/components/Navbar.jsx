@@ -40,25 +40,28 @@ export default function Navbar() {
             <AdminControls />
           </div>
 
-          <button
-            className={`navbar-hamburger ${menuOpen ? 'is-open' : ''}`}
-            onClick={() => setMenuOpen(o => !o)}
-            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-          >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
-        </div>
+        <button
+          className={`navbar-hamburger ${menuOpen ? 'is-open' : 'is-closed'}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          <Menu size={26} />
+        </button>
+      </div>
 
-        {/* Mobile Menu Content */}
-        <ul className={`navbar-mobile-links${menuOpen ? ' navbar-links--open' : ''}`}>
-          <li className="admin-menu-item-top">
-            <AdminControls />
-          </li>
-          <li><NavLink to="/" end onClick={closeMenu}>{t('nav.home')}</NavLink></li>
-          <li><NavLink to="/imoveis" onClick={closeMenu}>{t('nav.properties')}</NavLink></li>
-          <li><NavLink to="/sobre" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
-          <li><NavLink to="/contacto" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
-        </ul>
+      {/* Mobile Menu Content */}
+      <ul className={`navbar-mobile-links${menuOpen ? ' navbar-links--open' : ''}`}>
+        <li className="mobile-menu-header">
+          <AdminControls />
+          <button className="mobile-menu-close" onClick={closeMenu}>
+            <X size={26} />
+          </button>
+        </li>
+        <li><NavLink to="/" end onClick={closeMenu}>{t('nav.home')}</NavLink></li>
+        <li><NavLink to="/imoveis" onClick={closeMenu}>{t('nav.properties')}</NavLink></li>
+        <li><NavLink to="/sobre" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
+        <li><NavLink to="/contacto" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
+      </ul>
       </div>
 
       {menuOpen && <div className="navbar-overlay" onClick={closeMenu} />}
