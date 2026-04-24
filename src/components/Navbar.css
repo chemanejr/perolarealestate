@@ -39,12 +39,12 @@
 
 .navbar-logo span {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased font size */
   font-weight: 700;
   color: var(--color-dark);
   letter-spacing: -0.2px;
   white-space: nowrap;
-  margin-left: 1.5rem; /* Moved approximately 2.5cm to the left from its previous position */
+  margin-left: 5rem; /* Moved 1.5cm further to the right */
 }
 
 /* ── Desktop Links ── */
