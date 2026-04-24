@@ -229,8 +229,7 @@
   }
 
   .navbar-mobile-links {
-    top: 75px;
-    height: calc(100vh - 75px);
+    /* Main styles from above will handle top: 0 and height: 100vh */
   }
 }
 
