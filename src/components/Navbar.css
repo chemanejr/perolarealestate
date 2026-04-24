@@ -217,32 +217,8 @@
   }
 
   .navbar-mobile-links {
-    top: 100px;
-    height: calc(100vh - 100px);
-  }
-}
-
-  .navbar-links--open {
-    right: 0;
-  }
-
-  .navbar-links li {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .navbar-links a {
-    display: block;
-    padding: 1.2rem 0;
-    font-size: 1.1rem;
-    color: var(--color-dark);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .admin-menu-item {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
+    top: 75px;
+    height: calc(100vh - 75px);
   }
 }
 
