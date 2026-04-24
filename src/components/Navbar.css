@@ -44,7 +44,7 @@
   color: var(--color-dark);
   letter-spacing: -0.2px;
   white-space: nowrap;
-  margin-left: 2.6rem; /* Restored desktop position */
+  margin-left: 0.8rem; /* Restored to a much closer position */
 }
 
 /* ── Desktop Links ── */
