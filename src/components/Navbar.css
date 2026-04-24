@@ -212,7 +212,7 @@
   }
 
   .navbar-logo span {
-    margin-left: -1.2rem; /* Pull text even closer to account for transparency */
+    margin-left: 1.2rem; /* Moved 1cm further to the right */
     font-size: 1.3rem; /* Increased for mobile */
   }
 
