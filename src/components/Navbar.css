@@ -44,7 +44,7 @@
   color: var(--color-dark);
   letter-spacing: -0.2px;
   white-space: nowrap;
-  margin-left: 7rem; /* Moved approximately 3cm to the right */
+  margin-left: 1.5rem; /* Moved approximately 2.5cm to the left from its previous position */
 }
 
 /* ── Desktop Links ── */
