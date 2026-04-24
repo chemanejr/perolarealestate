@@ -17,7 +17,7 @@ export function useProperties() {
     };
     return {
       id:          p.id,
-      image:       p.images && p.images.length > 0 ? p.images[0] : '/property_placeholder.png',
+      image:       Array.isArray(p.images) && p.images.length > 0 ? p.images[0] : (typeof p.images === 'string' && p.images.startsWith('[') ? JSON.parse(p.images)[0] : '/property_placeholder.png'),
       title:       p.title,
       price:       p.price,
       location:    p.location,
@@ -27,7 +27,7 @@ export function useProperties() {
       status:      typeMap[p.type] || p.type || 'Imóvel',
       dealType:    dealType,
       exclusive:   false,
-      images:      p.images || [],
+      images:      Array.isArray(p.images) ? p.images : (typeof p.images === 'string' && p.images.startsWith('[') ? JSON.parse(p.images) : []),
       description: p.description,
       map_embed:   p.map_embed,
       source:      p.source || 'supabase',
@@ -45,6 +45,7 @@ export function useProperties() {
 
       if (!error && data && data.length > 0) {
         setProperties(data.map(mapRow));
+        setLoading(false);
         return;
       }
     } catch {

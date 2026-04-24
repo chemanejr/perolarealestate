@@ -214,20 +214,24 @@ export default function Home() {
             <p>Agende uma consultoria gratuita com a nossa equipa.</p>
           </div>
           <div className="cta-form-box">
-            <form className="cta-form">
+            <form className="cta-form" action="https://formsubmit.co/geral@perolarealestate.co.mz" method="POST">
+              <input type="hidden" name="_subject" value="Novo Contacto - Pérola Real Estate" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://perolarealestate.vercel.app/" />
+              
               <div className="form-row">
                 <div className="input-group">
                   <label>NOME</label>
-                  <input type="text" placeholder="O seu nome completo" />
+                  <input type="text" name="nome" placeholder="O seu nome completo" required />
                 </div>
                 <div className="input-group">
                   <label>TELEFONE/WHATSAPP</label>
-                  <input type="text" placeholder="+258" />
+                  <input type="text" name="telefone" placeholder="+258" required />
                 </div>
               </div>
               <div className="input-group full-width">
                 <label>MENSAGEM</label>
-                <textarea placeholder="Como podemos ajudar?" rows="2"></textarea>
+                <textarea name="mensagem" placeholder="Como podemos ajudar?" rows="2" required></textarea>
               </div>
               <button type="submit" className="btn-primary">ENVIAR MENSAGEM</button>
             </form>
