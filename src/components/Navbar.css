@@ -24,9 +24,9 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Reduced gap */
+  gap: 0.5rem;
   text-decoration: none;
-  margin-left: 0; /* Ensure no margin */
+  margin-left: 3.5rem; /* Moved approximately 1.5cm to the right */
 }
 
 .navbar-logo-img {
@@ -191,11 +191,11 @@
 
 @media (max-width: 992px) {
   .navbar {
-    height: 85px;
+    height: 110px;
   }
   
   .navbar-logo-img {
-    height: 70px;
+    height: 100px;
   }
 
   .navbar-desktop-links,
@@ -207,14 +207,18 @@
     display: flex;
   }
 
+  .navbar-logo {
+    margin-left: 3.5rem; /* Consistent 1.5cm shift on mobile */
+  }
+
   .navbar-logo span {
     margin-left: 1rem;
     font-size: 1.1rem;
   }
 
   .navbar-mobile-links {
-    top: 85px;
-    height: calc(100vh - 85px);
+    top: 110px;
+    height: calc(100vh - 110px);
   }
 }
 
