@@ -39,12 +39,12 @@
 
 .navbar-logo span {
   font-family: var(--font-heading);
-  font-size: 1.5rem; /* Increased font size */
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-dark);
   letter-spacing: -0.2px;
   white-space: nowrap;
-  margin-left: 5rem; /* Moved 1.5cm further to the right */
+  margin-left: 0.8rem; /* Moved 3cm to the left from its previous 5rem position */
 }
 
 /* ── Desktop Links ── */
@@ -212,8 +212,8 @@
   }
 
   .navbar-logo span {
-    margin-left: 0.5rem; /* Moved slightly closer to the logo */
-    font-size: 1.1rem;
+    margin-left: 0.5rem;
+    font-size: 1.3rem; /* Increased for mobile */
   }
 
   .navbar-mobile-links {
