@@ -44,7 +44,7 @@
   color: var(--color-dark);
   letter-spacing: -0.2px;
   white-space: nowrap;
-  margin-left: 3.2rem; /* Moved 0.25cm further to the right */
+  margin-left: 2.6rem; /* Restored desktop position */
 }
 
 /* ── Desktop Links ── */
