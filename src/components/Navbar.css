@@ -139,15 +139,17 @@
   color: var(--color-dark);
   cursor: pointer;
   padding: 4px;
+  position: relative;
+  z-index: 1002; /* Ensure it stays above the mobile menu */
 }
 
 /* ── Mobile Menu Content ── */
 .navbar-mobile-links {
   position: fixed;
-  top: 80px;
+  top: 75px; /* Updated to match mobile navbar height */
   right: -300px;
   width: 280px;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 75px);
   background: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -166,6 +168,12 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.admin-menu-item-top {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
 .navbar-mobile-links a {
   display: block;
   padding: 1.2rem 0;
@@ -173,12 +181,6 @@
   color: var(--color-dark);
   font-weight: 600;
   text-decoration: none;
-}
-
-.admin-menu-item {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
 }
 
 /* ── Responsive ── */

@@ -51,13 +51,13 @@ export default function Navbar() {
 
         {/* Mobile Menu Content */}
         <ul className={`navbar-mobile-links${menuOpen ? ' navbar-links--open' : ''}`}>
+          <li className="admin-menu-item-top">
+            <AdminControls />
+          </li>
           <li><NavLink to="/" end onClick={closeMenu}>{t('nav.home')}</NavLink></li>
           <li><NavLink to="/imoveis" onClick={closeMenu}>{t('nav.properties')}</NavLink></li>
           <li><NavLink to="/sobre" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
           <li><NavLink to="/contacto" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
-          <li className="admin-menu-item">
-            <AdminControls />
-          </li>
         </ul>
       </div>
 
