@@ -208,11 +208,11 @@
   }
 
   .navbar-logo {
-    margin-left: 3.5rem; /* Consistent 1.5cm shift on mobile */
+    margin-left: 1.75rem; /* Moved 0.75cm to the left (half of the previous 1.5cm) */
   }
 
   .navbar-logo span {
-    margin-left: 1rem;
+    margin-left: 0.5rem; /* Moved slightly closer to the logo */
     font-size: 1.1rem;
   }
 
