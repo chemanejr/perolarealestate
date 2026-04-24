@@ -135,6 +135,12 @@
 .navbar-hamburger {
   display: none; /* Hidden on desktop */
   background: none;
+  border: none;
+  color: var(--color-dark);
+  cursor: pointer;
+  padding: 4px;
+}
+
 /* ── Mobile Menu Content ── */
 .navbar-mobile-links {
   display: none; /* Hidden on desktop */
