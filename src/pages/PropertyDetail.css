@@ -7,16 +7,14 @@
 /* ── Hero Section (Home Page Style) ── */
 .property-detail-page .hero-section {
   position: relative;
-  height: 85vh; /* Aumentado de 75vh */
-  min-height: 650px; /* Aumentado de 550px */
+  height: calc(85vh - 80px); /* Aumentado de 75vh */
+  min-height: 600px; /* Aumentado de 550px */
   max-height: 1000px;
   background-color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: -85px; /* Navbar overlap */
-  padding-top: 85px;
   overflow: hidden;
 }
 

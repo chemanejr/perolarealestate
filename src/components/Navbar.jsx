@@ -23,7 +23,7 @@ export default function Navbar() {
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
-  
+
   const isTransparent = hasHero && !scrolled
 
   return (
@@ -44,7 +44,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div 
+        <div
           className={`language-toggle ${lang === 'EN' ? 'is-en' : 'is-pt'}`}
           onClick={toggleLanguage}
         >

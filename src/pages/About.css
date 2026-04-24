@@ -4,15 +4,13 @@
 
 .about-hero {
   position: relative;
-  height: 70vh;
+  height: calc(70vh - 80px);
   min-height: 500px;
   background-image: url('/hero_mansion.png');
   background-size: cover;
   background-position: center 20%;
   display: flex;
   align-items: center;
-  margin-top: -85px;
-  padding-top: 85px;
   transition: background-image 1.2s ease-in-out;
 }
 

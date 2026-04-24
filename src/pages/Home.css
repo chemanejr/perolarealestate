@@ -1,7 +1,7 @@
 .home-page .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 750px;
+  height: calc(100vh - 80px);
+  min-height: 700px;
   background-image: url('/hero_1.jpg'); /* Default to first slide */
   background-size: cover;
   background-position: center;
@@ -9,8 +9,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: -85px; /* Pull up under navbar */
-  padding-top: 85px;
   transition: background-image 1.2s ease-in-out; /* Smooth cross-fade effect */
 }
 
@@ -46,11 +44,10 @@
   position: relative;
   z-index: 10;
   color: var(--color-white);
-  padding: 8rem 2rem 3rem; 
-  max-width: 1400px; /* Alargado para acomodar a barra de pesquisa horizontal */
+  padding: 4rem 2rem 3rem; 
+  max-width: 1400px; 
   width: 100%;
   margin: 0 auto;
-  transform: translateY(-80px); /* Subido aproximadamente 3cm em relação à posição anterior */
 }
 
 .home-page .hero-content h1 {
