@@ -77,7 +77,8 @@ export default function EditPropertyModal({ property, onClose }) {
     setSaving(true)
     setError('')
     try {
-      const { error: updateError } = await supabase.from('properties').update({
+      const isJsonSource = String(property.id).startsWith('json_')
+      const payload = {
         title:       form.title,
         price:       form.price,
         location:    form.location,
@@ -89,8 +90,13 @@ export default function EditPropertyModal({ property, onClose }) {
         description: form.description,
         map_embed:   form.map_embed || null,
         images:      images,
-      }).eq('id', property.id)
-      if (updateError) throw updateError
+      }
+
+      const { error: dbError } = isJsonSource 
+        ? await supabase.from('properties').insert([payload])
+        : await supabase.from('properties').update(payload).eq('id', property.id)
+
+      if (dbError) throw dbError
       setSuccess(true)
       setTimeout(() => {
         onClose()

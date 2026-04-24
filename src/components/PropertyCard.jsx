@@ -55,15 +55,13 @@ export default function PropertyCard({ id, images = [], image, title, price, loc
         
         {isAdmin && (
           <div className="property-admin-actions">
-            {!String(id).startsWith('json_') && (
-              <button
-                className="property-edit-btn"
-                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShowEditModal(true); }}
-                title="Editar imóvel"
-              >
-                <Edit size={14} />
-              </button>
-            )}
+            <button
+              className="property-edit-btn"
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShowEditModal(true); }}
+              title="Editar imóvel"
+            >
+              <Edit size={14} />
+            </button>
             <button
               className="property-delete-btn"
               onClick={handleDelete}
