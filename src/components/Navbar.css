@@ -44,7 +44,7 @@
   color: var(--color-dark);
   letter-spacing: -0.2px;
   white-space: nowrap;
-  margin-left: -0.5rem; /* Negative margin to pull text over image transparency */
+  margin-left: 3.8rem;
 }
 
 /* ── Desktop Links ── */
@@ -212,7 +212,7 @@
   }
 
   .navbar-logo span {
-    margin-left: 1.2rem; /* Moved 1cm further to the right */
+    margin-left: 0; /* Moved 0.5cm left */
     font-size: 1.3rem; /* Increased for mobile */
   }
 
