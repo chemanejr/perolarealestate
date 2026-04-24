@@ -207,6 +207,11 @@
     display: flex;
   }
 
+  .navbar-logo span {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+  }
+
   .navbar-mobile-links {
     top: 75px;
     height: calc(100vh - 75px);
