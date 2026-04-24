@@ -36,6 +36,8 @@ export function useProperties() {
 
   const fetchProperties = async () => {
     setLoading(true);
+    
+    let supabaseProps = [];
     try {
       // Try Supabase first
       const { data, error } = await supabase
@@ -43,24 +45,23 @@ export function useProperties() {
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (!error && data && data.length > 0) {
-        setProperties(data.map(mapRow));
-        setLoading(false);
-        return;
+      if (!error && data) {
+        supabaseProps = data.map(mapRow);
       }
     } catch {
-      // Supabase unavailable — fall through to JSON
+      // Supabase unavailable
     }
 
-    // Fallback to local JSON
+    // Fetch local JSON to combine with Supabase data
+    let jsonProps = [];
     try {
       const res  = await fetch('/properties.json');
       const data = await res.json();
-      const mapped = data.map(p => {
+      jsonProps = data.map(p => {
         const numericPrice = parseInt((p.price || '').replace(/\D/g, ''), 10) || 0;
         const dealType     = numericPrice > 500000 ? 'Venda' : 'Arrendamento';
         return {
-          id:          p.id,
+          id:          `json_${p.id}`,
           image:       p.images && p.images.length > 0 ? p.images[0] : '/property_placeholder.png',
           title:       p.title,
           price:       p.price,
@@ -77,12 +78,12 @@ export function useProperties() {
           source:      'json',
         };
       });
-      setProperties(mapped);
     } catch (err) {
       console.error('Failed to fetch properties', err);
-    } finally {
-      setLoading(false);
     }
+
+    setProperties([...supabaseProps, ...jsonProps]);
+    setLoading(false);
   };
 
   useEffect(() => { fetchProperties(); }, []);

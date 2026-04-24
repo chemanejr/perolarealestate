@@ -243,14 +243,20 @@
   }
 }
 
-/* Admin delete button */
-.property-delete-btn {
+/* Admin Actions */
+.property-admin-actions {
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 20;
-  background: rgba(220, 38, 38, 0.85);
-  color: white;
+  display: flex;
+  gap: 8px;
+}
+
+.property-edit-btn,
+.property-delete-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-dark);
   border: none;
   border-radius: 50%;
   width: 32px;
@@ -261,6 +267,18 @@
   cursor: pointer;
   transition: all 0.2s;
   backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.property-edit-btn:hover {
+  background: white;
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.property-delete-btn {
+  background: rgba(220, 38, 38, 0.85);
+  color: white;
   box-shadow: 0 2px 8px rgba(220,38,38,0.4);
 }
 

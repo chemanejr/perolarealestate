@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, Bed, Bath, Square, ChevronLeft, ChevronRight, Trash2, Loader } from 'lucide-react'
+import { MapPin, Bed, Bath, Square, ChevronLeft, ChevronRight, Trash2, Edit, Loader } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabase'
+import EditPropertyModal from './EditPropertyModal'
 import './PropertyCard.css'
 
 export default function PropertyCard({ id, images = [], image, title, price, location, beds, baths, area, status, dealType, exclusive, onDelete }) {
@@ -12,7 +13,7 @@ export default function PropertyCard({ id, images = [], image, title, price, loc
   const displayImages = images && images.length > 0 ? images : [image];
   const [currentIdx, setCurrentIdx] = useState(0);
   const [deleting, setDeleting]     = useState(false);
-
+  const [showEditModal, setShowEditModal] = useState(false);
 
   // Dynamic status translation
   const getStatusLabel = (statusStr) => {
@@ -53,14 +54,25 @@ export default function PropertyCard({ id, images = [], image, title, price, loc
         <img src={displayImages[currentIdx]} alt={title} className="property-image" loading="lazy" decoding="async" />
         
         {isAdmin && (
-          <button
-            className="property-delete-btn"
-            onClick={handleDelete}
-            disabled={deleting}
-            title="Remover imóvel"
-          >
-            {deleting ? <Loader size={14} className="spin" /> : <Trash2 size={14} />}
-          </button>
+          <div className="property-admin-actions">
+            {!String(id).startsWith('json_') && (
+              <button
+                className="property-edit-btn"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShowEditModal(true); }}
+                title="Editar imóvel"
+              >
+                <Edit size={14} />
+              </button>
+            )}
+            <button
+              className="property-delete-btn"
+              onClick={handleDelete}
+              disabled={deleting}
+              title="Remover imóvel"
+            >
+              {deleting ? <Loader size={14} className="spin" /> : <Trash2 size={14} />}
+            </button>
+          </div>
         )}
         {displayImages.length > 1 && (
           <>
@@ -113,6 +125,13 @@ export default function PropertyCard({ id, images = [], image, title, price, loc
            </Link>
         )}
       </div>
+
+      {showEditModal && (
+        <EditPropertyModal 
+          property={{ id, images, image, title, price, location, beds, baths, area, status, dealType, exclusive }} 
+          onClose={() => setShowEditModal(false)} 
+        />
+      )}
     </div>
   )
 }
