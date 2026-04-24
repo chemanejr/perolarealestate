@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import './Contact.css'
 
 export default function Contact() {
   const { t } = useLanguage()
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: t('contact.form.subjects.0'),
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const message = `Olá, o meu nome é ${formData.name}. Email: ${formData.email}. Telefone: ${formData.phone}. Assunto: ${formData.subject}. Mensagem: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.link/so138v?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <div className="contact-page">
       <div className="contact-container">
@@ -17,26 +37,44 @@ export default function Contact() {
 
         <div className="contact-grid">
           <div className="contact-form-section">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group-row">
                 <div className="input-group">
                   <label>{t('contact.form.name')}</label>
-                  <input type="text" placeholder={t('contact.form.namePlaceholder')} />
+                  <input 
+                    name="name"
+                    type="text" 
+                    placeholder={t('contact.form.namePlaceholder')} 
+                    required 
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="input-group">
                   <label>{t('contact.form.company')}</label>
-                  <input type="email" placeholder={t('contact.form.companyPlaceholder')} />
+                  <input 
+                    name="email"
+                    type="email" 
+                    placeholder={t('contact.form.companyPlaceholder')} 
+                    required
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
 
               <div className="form-group-row">
                 <div className="input-group">
                   <label>{t('contact.form.phone')}</label>
-                  <input type="text" placeholder={t('contact.form.phonePlaceholder')} />
+                  <input 
+                    name="phone"
+                    type="text" 
+                    placeholder={t('contact.form.phonePlaceholder')} 
+                    required
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="input-group">
                   <label>{t('contact.form.subject')}</label>
-                  <select>
+                  <select name="subject" onChange={handleChange}>
                     <option>{t('contact.form.subjects.0')}</option>
                     <option>{t('contact.form.subjects.1')}</option>
                     <option>{t('contact.form.subjects.2')}</option>
@@ -47,7 +85,13 @@ export default function Contact() {
 
               <div className="input-group full-width">
                 <label>{t('contact.form.message')}</label>
-                <textarea placeholder={t('contact.form.messagePlaceholder')} rows="2"></textarea>
+                <textarea 
+                  name="message"
+                  placeholder={t('contact.form.messagePlaceholder')} 
+                  rows="2" 
+                  required
+                  onChange={handleChange}
+                ></textarea>
               </div>
 
               <button type="submit" className="btn-primary">{t('contact.form.submit')}</button>

@@ -27,15 +27,15 @@ export default function Home() {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section 
-        className="hero-section" 
+      <section
+        className="hero-section"
         style={{ backgroundImage: `url(${slides[currentSlide]})` }}
       >
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>{t('hero.title')}</h1>
           <p>{t('hero.subtitle')}</p>
-          
+
           <div className="search-bar">
             {/* Row 1 */}
             <select className="search-select">
@@ -48,7 +48,7 @@ export default function Home() {
               <option>{t('hero.search.villa')}</option>
               <option>{t('hero.search.office')}</option>
             </select>
-            
+
             {/* Row 2 - Wide on Desktop */}
             <div className="search-input-group full-row desktop-span-2">
               <input type="text" placeholder={t('catalog.filters.location')} />
@@ -108,7 +108,7 @@ export default function Home() {
             <button className="search-btn full-row desktop-span-search">{t('hero.search.btn')}</button>
           </div>
         </div>
-        
+
         {/* Shape Divider */}
         <div className="hero-shape-divider">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -218,7 +218,7 @@ export default function Home() {
               <input type="hidden" name="_subject" value="Novo Contacto - Pérola Real Estate" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value="https://perolarealestate.vercel.app/" />
-              
+
               <div className="form-row">
                 <div className="input-group">
                   <label>NOME</label>
