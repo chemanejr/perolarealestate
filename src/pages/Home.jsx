@@ -17,6 +17,24 @@ export default function Home() {
   const [customMin, setCustomMin] = useState(false)
   const [customMax, setCustomMax] = useState(false)
 
+  const [ctaData, setCtaData] = useState({
+    name: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleCtaChange = (e) => {
+    const { name, value } = e.target;
+    setCtaData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleCtaSubmit = (e) => {
+    e.preventDefault();
+    const message = `Olá, o meu nome é ${ctaData.name}. Telefone: ${ctaData.phone}. Mensagem: ${ctaData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.link/so138v?text=${encodedMessage}`, '_blank');
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % slides.length)
@@ -214,24 +232,41 @@ export default function Home() {
             <p>Agende uma consultoria gratuita com a nossa equipa.</p>
           </div>
           <div className="cta-form-box">
-            <form className="cta-form" action="https://formsubmit.co/geral@perolarealestate.co.mz" method="POST">
-              <input type="hidden" name="_subject" value="Novo Contacto - Pérola Real Estate" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://perolarealestate.vercel.app/" />
-
+            <form className="cta-form" onSubmit={handleCtaSubmit}>
               <div className="form-row">
                 <div className="input-group">
                   <label>NOME</label>
-                  <input type="text" name="nome" placeholder="O seu nome completo" required />
+                  <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="O seu nome completo" 
+                    required 
+                    value={ctaData.name}
+                    onChange={handleCtaChange}
+                  />
                 </div>
                 <div className="input-group">
                   <label>TELEFONE/WHATSAPP</label>
-                  <input type="text" name="telefone" placeholder="+258" required />
+                  <input 
+                    type="text" 
+                    name="phone" 
+                    placeholder="+258" 
+                    required 
+                    value={ctaData.phone}
+                    onChange={handleCtaChange}
+                  />
                 </div>
               </div>
               <div className="input-group full-width">
                 <label>MENSAGEM</label>
-                <textarea name="mensagem" placeholder="Como podemos ajudar?" rows="2" required></textarea>
+                <textarea 
+                  name="message" 
+                  placeholder="Como podemos ajudar?" 
+                  rows="2" 
+                  required
+                  value={ctaData.message}
+                  onChange={handleCtaChange}
+                ></textarea>
               </div>
               <button type="submit" className="btn-primary">ENVIAR MENSAGEM</button>
             </form>

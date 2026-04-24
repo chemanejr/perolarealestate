@@ -86,37 +86,23 @@ export default function PropertyDetail() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleFinalSubmit = async (e) => {
+  const handleFinalSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const response = await fetch("https://formspree.io/f/xqkroryl", { // Usando um ID temporário que pode ser trocado ou substituído pelo email direto se o Formspree permitir
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          _subject: `Novo Lead: ${property.title} (ID: ${property.id})`,
-          ...formData,
-          property_title: property.title,
-          property_id: property.id,
-          property_url: window.location.href
-        })
-      });
+    const message = `Olá, tenho interesse neste imóvel: ${property.title}. ID: ${property.id}. 
+Quando pretendo comprar: ${formData.timing}. 
+Como pretendo pagar: ${formData.payment}. 
+Qual o meu objetivo: ${formData.objective}. 
+Nome: ${formData.name}. 
+WhatsApp: ${formData.phone}. 
+Email: ${formData.email}.`;
 
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        alert("Ocorreu um erro ao enviar. Por favor, tente novamente.");
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Erro de conexão. Verifique a sua internet.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.link/so138v?text=${encodedMessage}`, '_blank');
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
   };
 
   if (loading) return <div className="property-detail-page"><div className="detail-container">A carregar...</div></div>
