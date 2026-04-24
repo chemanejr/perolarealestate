@@ -30,7 +30,7 @@
 }
 
 .navbar-logo-img {
-  height: 120px; /* Increased to 120px as requested */
+  height: 135px; /* Increased to 135px as requested */
   width: auto;
   object-fit: contain;
   display: block;
@@ -195,7 +195,7 @@
   }
   
   .navbar-logo-img {
-    height: 120px;
+    height: 135px;
   }
 
   .navbar-desktop-links,
