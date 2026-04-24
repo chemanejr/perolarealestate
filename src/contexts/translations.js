@@ -106,7 +106,7 @@ export const translations = {
     },
     catalog: {
       title: 'Catálogo de Prestígio',
-      desc: 'Descubra a nossa curadoria exclusiva de residências de luxo em Maputo, onde a arquitectura moderna encontra o conforto absoluto.',
+      desc: 'Descubra o nosso catálogo exclusivo de residências de luxo em Maputo, onde a arquitectura moderna encontra o conforto absoluto.',
       filters: {
         type: 'Tipo de Imóvel',
         purpose: 'Finalidade',
