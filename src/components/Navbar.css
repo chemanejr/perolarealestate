@@ -1,5 +1,5 @@
 .navbar {
-  height: 110px; /* Adjusted for 100px logo */
+  height: 85px; /* Reduced from 110px */
   background-color: var(--color-white);
   width: 100%;
   position: fixed;
@@ -17,7 +17,7 @@
   max-width: 1550px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem 0 0; /* REMOVED LEFT PADDING */
+  padding: 0 2rem 0 0;
 }
 
 /* ── Logo ── */
@@ -30,7 +30,7 @@
 }
 
 .navbar-logo-img {
-  height: 100px; /* Increased to 100px */
+  height: 75px; /* Reduced from 100px */
   width: auto;
   object-fit: contain;
   display: block;
@@ -191,11 +191,11 @@
 
 @media (max-width: 992px) {
   .navbar {
-    height: 110px;
+    height: 75px;
   }
   
   .navbar-logo-img {
-    height: 100px;
+    height: 65px;
   }
 
   .navbar-desktop-links,
@@ -217,8 +217,8 @@
   }
 
   .navbar-mobile-links {
-    top: 110px;
-    height: calc(100vh - 110px);
+    top: 75px;
+    height: calc(100vh - 75px);
   }
 }
 
